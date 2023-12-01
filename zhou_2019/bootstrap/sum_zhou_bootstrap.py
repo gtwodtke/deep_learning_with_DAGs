@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Define the path where the files are located
-base_path = '/Users/changhuizhou/Desktop/Midway_MCE_results'
+base_path = '/Users/jessezhou/Desktop/Midway_MCE_results'
 folder = 'zhou_2019'
 path = os.path.join(base_path, folder, '')
 
