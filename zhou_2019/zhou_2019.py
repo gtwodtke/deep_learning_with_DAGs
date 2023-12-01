@@ -9,7 +9,7 @@ from causalgraphicalmodels import CausalGraphicalModel
 from cGNF import process, train, sim
 
 
-base_path = '/Users/changhuizhou/Desktop/programs/cGNF_python_code'  # Define the base path for file operations.
+base_path = '/Users/jessezhou/Desktop/programs/cGNF_python_code'  # Define the base path for file operations.
 folder = 'zhou_2019'  # Define the folder where files will be stored.
 path = os.path.join(base_path, folder, '')  # Combines the base path and folder into a complete path.
 dataset_name = 'zhou_2019_cgnf'  # Define the name of the dataset.
