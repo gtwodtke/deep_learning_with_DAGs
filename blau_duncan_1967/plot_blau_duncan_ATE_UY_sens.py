@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 plt.rcParams["font.family"] = "Times New Roman"
 plt.rcParams.update({'font.size': 16})  # Sets the global font size to 16
 
-path = '/Users/changhuizhou/Desktop/Midway_MCE_results/blau_sens/'
+path = '/Users/jessezhou/Desktop/Midway_MCE_results/blau_sens/'
 
 # File paths for the datasets
 files = [path + "standardized_ATE_UY_results_1.csv", path + "standardized_ATE_UY_results_2.csv",
