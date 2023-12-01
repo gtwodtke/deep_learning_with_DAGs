@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 plt.rcParams["font.family"] = "Times New Roman"
 
 # Reading datasets
-path = '/Users/changhuizhou/Desktop/Midway_MCE_results/NONLIN/'
+path = '/Users/jessezhou/Desktop/Midway_MCE_results/_MCE_2/'
 
 data_2k = pd.read_csv(path + "2k/2k_summary_statistics.csv", index_col=0)
 data_4k = pd.read_csv(path + "4k/4k_summary_statistics.csv", index_col=0)
