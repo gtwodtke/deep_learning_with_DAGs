@@ -72,7 +72,7 @@ def run_simulation(i, node_id):
     df_cDAG = nx.to_pandas_adjacency(simDAG.dag, dtype=int)
     df_cDAG.to_csv(path + dataset_name + '_DAG.csv')
 
-    process(path=path, dataset_name=dataset_name, dag_name=dataset_name + '_DAG', test_size=0.2, cat_var=['A'], seed=None)
+    process(path=path, dataset_name=dataset_name, dag_name=dataset_name + '_DAG', test_size=0.2, cat_var=["A", "C", "M", "L", "Y"], seed=None)
     train(path=path, dataset_name=dataset_name, model_name =path + '128k_loop',
           trn_batch_size=128, val_batch_size=4096, learning_rate=1e-4, seed=None, nb_epoch=50000,
           emb_net=[100, 90, 80, 70, 60], int_net=[60, 50, 40, 30, 20], nb_estop=50, val_freq=1)
