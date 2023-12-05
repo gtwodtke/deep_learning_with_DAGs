@@ -2,8 +2,8 @@ import os
 import pandas as pd
 
 # Define the path where the files are located
-base_path = '/Users/jessezhou/Desktop/Hyperparameter_2'
-folder = '32k_5'
+base_path = '/Users/jessezhou/Desktop/Hyperparameter_1'
+folder = '32k_1'
 path = os.path.join(base_path, folder, '')
 
 # List of file names to be appended
