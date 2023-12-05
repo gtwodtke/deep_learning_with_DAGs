@@ -85,4 +85,4 @@ for diff_name, diff_values in diff.items():
     summary_stats_df.loc[diff_name] = diff_values
 
 
-summary_stats_df.to_csv(path + '32k_1.csv', index=True)
+summary_stats_df.to_csv(base_path + '32k_1.csv', index=True)
