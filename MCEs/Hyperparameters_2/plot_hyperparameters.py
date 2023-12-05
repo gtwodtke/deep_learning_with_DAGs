@@ -44,7 +44,7 @@ def create_bar_plot(column, title, datasets, labels):
     plt.tight_layout()
     plt.savefig(path + f"Hyperparameter_{title}.png", dpi=300)
 
-path = '/Users/jessezhou/Desktop/Hyperparameter_1/'
+path = '/Users/jessezhou/Desktop/Hyperparameter_2/'
 
 
 # Load all datasets
