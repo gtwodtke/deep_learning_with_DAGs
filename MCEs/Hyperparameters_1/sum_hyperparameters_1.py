@@ -31,26 +31,6 @@ final_results_df['cGNF_ATE (A->Y)'] = final_results_df['E_Y_A_1_sim'] - final_re
 final_results_df['cGNF_PSE (A->Y)'] = final_results_df['E_Y_A_1_L_0_M_0_sim'] - final_results_df['E_Y_A_0_sim']
 final_results_df['cGNF_PSE (A->L->Y)'] = final_results_df['E_Y_A_1_sim'] - final_results_df['E_Y_A_1_L_0_sim']
 final_results_df['cGNF_PSE (A->M->Y)'] = final_results_df['E_Y_A_1_L_0_sim'] - final_results_df['E_Y_A_1_L_0_M_0_sim']
-final_results_df['cGNF_ATE (A->M)'] = final_results_df['E_M_A_1_sim'] - final_results_df['E_M_A_0_sim']
-final_results_df['cGNF_NDE'] = final_results_df['E_M_A_1_L_0_sim'] - final_results_df['E_M_A_0_sim']
-final_results_df['cGNF_NIE'] = final_results_df['E_M_A_1_sim'] - final_results_df['E_M_A_1_L_0_sim']
-
-#Linear Regression
-
-final_results_df['reg_ATE (A->Y)'] = final_results_df['coef_YA'] + (final_results_df['coef_YL'] * final_results_df['coef_LA']) \
-                                     + (final_results_df['coef_YM'] * final_results_df['coef_ML'] * final_results_df['coef_LA']) \
-                                     + final_results_df['coef_YM'] * final_results_df['coef_MA']
-
-final_results_df['reg_PSE (A->Y)'] = final_results_df['coef_YA']
-
-final_results_df['reg_PSE (A->L->Y)'] = (final_results_df['coef_YL'] * final_results_df['coef_LA']) \
-                                        + (final_results_df['coef_YM'] * final_results_df['coef_ML'] * final_results_df['coef_LA'])
-
-final_results_df['reg_PSE (A->M->Y)'] = final_results_df['coef_YM'] * final_results_df['coef_MA']
-
-final_results_df['reg_ATE (A->M)'] = final_results_df['coef_MA'] + (final_results_df['coef_ML'] * final_results_df['coef_LA'])
-final_results_df['reg_NDE'] = final_results_df['coef_MA']
-final_results_df['reg_NIE'] = final_results_df['coef_ML'] * final_results_df['coef_LA']
 
 # Save the DataFrame with new columns to a new CSV file or overwrite the previous file
 final_results_df.to_csv(final_results_file_path, index=False)
@@ -60,27 +40,16 @@ results_df = final_results_df
 
 # Define the true values
 true_values = {
-    'cGNF_ATE (A->Y)': 0.324869557,
-    'cGNF_PSE (A->Y)': 0.189000419,
-    'cGNF_PSE (A->L->Y)': 0.085031005,
-    'cGNF_PSE (A->M->Y)': 0.050838133,
-    'cGNF_ATE (A->M)': 0.207101926,
-    'cGNF_NDE': 0.127043695,
-    'cGNF_NIE': 0.080058231,
-    'reg_ATE (A->Y)': 0.324869557,
-    'reg_PSE (A->Y)': 0.189000419,
-    'reg_PSE (A->L->Y)': 0.085031005,
-    'reg_PSE (A->M->Y)': 0.050838133,
-    'reg_ATE (A->M)': 0.207101926,
-    'reg_NDE': 0.127043695,
-    'reg_NIE': 0.080058231
+    'cGNF_ATE (A->Y)': 0.18,
+    'cGNF_PSE (A->Y)': 0.1,
+    'cGNF_PSE (A->L->Y)': 0.06,
+    'cGNF_PSE (A->M->Y)': 0.02
 }
 
 
+
 # Compute the mean, variance, and MSE for the specified columns
-columns_to_analyze = ['cGNF_ATE (A->Y)', 'cGNF_PSE (A->Y)', 'cGNF_PSE (A->L->Y)', 'cGNF_PSE (A->M->Y)', 'cGNF_ATE (A->M)',
-                      'cGNF_NDE', 'cGNF_NIE', 'reg_ATE (A->Y)', 'reg_PSE (A->Y)', 'reg_PSE (A->L->Y)', 'reg_PSE (A->M->Y)',
-                      'reg_ATE (A->M)', 'reg_NDE', 'reg_NIE']
+columns_to_analyze = ['cGNF_ATE (A->Y)', 'cGNF_PSE (A->Y)', 'cGNF_PSE (A->L->Y)', 'cGNF_PSE (A->M->Y)']
 summary_stats = {}
 
 for col in columns_to_analyze:
@@ -109,30 +78,11 @@ diff = {
     'Diff_ATE (A->Y)': abs(summary_stats_df.loc['cGNF_ATE (A->Y)']) - abs(summary_stats_df.loc['reg_ATE (A->Y)']),
     'Diff_PSE (A->Y)': abs(summary_stats_df.loc['cGNF_PSE (A->Y)']) - abs(summary_stats_df.loc['reg_PSE (A->Y)']),
     'Diff_PSE (A->L->Y)': abs(summary_stats_df.loc['cGNF_PSE (A->L->Y)']) - abs(summary_stats_df.loc['reg_PSE (A->L->Y)']),
-    'Diff_PSE (A->M->Y)': abs(summary_stats_df.loc['cGNF_PSE (A->M->Y)']) - abs(summary_stats_df.loc['reg_PSE (A->M->Y)']),
-    'Diff_ATE (A->M)': abs(summary_stats_df.loc['cGNF_ATE (A->M)']) - abs(summary_stats_df.loc['reg_ATE (A->M)']),
-    'Diff_NDE': abs(summary_stats_df.loc['cGNF_NDE']) - abs(summary_stats_df.loc['reg_NDE']),
-    'Diff_NIE': abs(summary_stats_df.loc['cGNF_NIE']) - abs(summary_stats_df.loc['reg_NIE'])
+    'Diff_PSE (A->M->Y)': abs(summary_stats_df.loc['cGNF_PSE (A->M->Y)']) - abs(summary_stats_df.loc['reg_PSE (A->M->Y)'])
 }
 
 for diff_name, diff_values in diff.items():
     summary_stats_df.loc[diff_name] = diff_values
 
 
-
-ratio = {
-    'Ratio_ATE (A->Y)': summary_stats_df.loc['cGNF_ATE (A->Y)'] / summary_stats_df.loc['reg_ATE (A->Y)'],
-    'Ratio_PSE (A->Y)': summary_stats_df.loc['cGNF_PSE (A->Y)'] / summary_stats_df.loc['reg_PSE (A->Y)'],
-    'Ratio_PSE (A->L->Y)': summary_stats_df.loc['cGNF_PSE (A->L->Y)'] / summary_stats_df.loc['reg_PSE (A->L->Y)'],
-    'Ratio_PSE (A->M->Y)': summary_stats_df.loc['cGNF_PSE (A->M->Y)'] / summary_stats_df.loc['reg_PSE (A->M->Y)'],
-    'Ratio_ATE (A->M)': summary_stats_df.loc['cGNF_ATE (A->M)'] - summary_stats_df.loc['reg_ATE (A->M)'],
-    'Ratio_NDE': summary_stats_df.loc['cGNF_NDE'] / summary_stats_df.loc['reg_NDE'],
-    'Ratio_NIE': summary_stats_df.loc['cGNF_NIE'] / summary_stats_df.loc['reg_NIE']
-}
-
-for ratio_name, ratio_values in ratio.items():
-    summary_stats_df.loc[ratio_name] = ratio_values
-
-
-
-summary_stats_df.to_csv(path + '32k_summary_statistics.csv', index=True)
+summary_stats_df.to_csv(path + '32k_1.csv', index=True)
