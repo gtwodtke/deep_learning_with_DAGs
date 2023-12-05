@@ -5,20 +5,15 @@ import networkx as nx
 import time
 import re
 from causalgraphicalmodels import CausalGraphicalModel
-from cGNF.process_parallel import process
-from cGNF.train_parallel import train
+from cGNF.processing_parallel import process
+from cGNF.training_parallel import train
 from cGNF.simulation_parallel import sim
-import statsmodels.api as sm
+
 
 def run_simulation(i, node_id):
     print(f"Running simulation {i} on Process ID: {os.getpid()}")
     start_time = time.time()
     obs = 128000
-
-    import numpy as np
-    import pandas as pd
-
-    obs = 32000  # Number of observations
 
     # Define probabilities for C
     prob_C = [0.3, 0.5, 0.2]  # Probabilities for C taking values 1, 2, and 3
@@ -43,12 +38,17 @@ def run_simulation(i, node_id):
     # Assign L based on C and A
     L = np.array([assign_L(c, a) for c, a in zip(C, A)])
 
-    # Mediator M, discrete, with non-linear interaction
-    M = np.random.choice([0, 1, 2], obs) + np.round(0.1 * A + 0.2 * C ** 2 + 0.25 * ((-1) ** L) * A * L)
+    # Mediator M, binary, with non-linear interaction
+    # Logistic transformation to ensure binary outcome
+    logit_M = 0.1 * A + 0.2 * C + 0.25 * A * L
+    prob_M = 1 / (1 + np.exp(-logit_M))  # Sigmoid function for binary conversion
+    M = np.random.binomial(1, prob_M, obs)
 
-    # Outcome Y, discrete, with interaction and non-linear terms
-    Y = np.random.choice([0, 1, 2, 3, 4], obs) + np.round(
-        0.1 * A + 0.1 * C ** 2 + 0.2 * M + 0.2 * A * M + 0.25 * np.sin(np.pi * L / 2))
+    # Outcome Y, binary, with interaction and non-linear terms
+    # Logistic transformation to ensure binary outcome
+    logit_Y = 0.1 * A + 0.1 * C + 0.2 * M + 0.2 * A * M + 0.25 * L
+    prob_Y = 1 / (1 + np.exp(-logit_Y))  # Sigmoid function for binary conversion
+    Y = np.random.binomial(1, prob_Y, obs)
 
     # pack into a dataframe
     df = pd.DataFrame({'A': A, 'C': C, 'M': M, 'L': L, 'Y': Y})
