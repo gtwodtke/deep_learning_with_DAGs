@@ -27,12 +27,8 @@ Scripts for bootstrapping samples.
 - `init_blau_bootstrap.py`: Initiates `blau_bootstrap.py`.
 - `blau_bootstrap.sbatch`: Slurm script for `init_blau_bootstrap.py` on HPC.
 - `standardization.py`: Standardizes all computed results.
-- `sum_blau_bootstrap_ATE_XY.py`: Computes and plots 95% confidence intervals and point estimates on average total effect of X on Y.
-- `sum_blau_bootstrap_ATE_UY.py`: Computes and plots 95% confidence intervals and point estimates on average total effect of U on Y.
-- `sum_blau_bootstrap_ATE_NDENIE.py`: Computes and plots 95% confidence intervals and point estimates on natural direct and indirect effects of X on Y mediated by U.
-- `plot_blau_bootstrap_ATE_XY.py`: Plots point estimates and 95% confidence interval on average total effect of X on Y.
-- `plot_blau_bootstrap_ATE_UY.py`: Plots point estimates and 95% confidence interval on average total effect of U on Y.
-- `plot_blau_bootstrap_ATE_NDENIE.py`: Plots point estimates and 95% confidence interval on natural direct and indirect effects of X on Y mediated by U.
+- `sum_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Computes and plots 95% confidence intervals and point estimates on average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
+- `plot_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Plots point estimates and 95% confidence interval on average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
 
 #### Subfolder: `sensitivity`
 Scripts for sensitive analysis on .
@@ -71,9 +67,7 @@ Scripts for producing, initiating, summarizing, and plotting Monte Carlo samples
 - `init_MCE_<1/2/3>.py`: Initiates `MCE_<1/2/3>.py`.
 - `sum_MCE_<1/2/3>.py`: Computes summary statistics.
 - `plot_MCE_<1/2/3>.py`: Plots summary statistics.
-- `est_ATE.py`: Calculates true values of average total effects.
-- `est_NDENIE.py`: Calculates true values of natural direct and indirect effects.
-- `est_PSE.py`: Calculates true values of path-specific effects.
+- `est_<ATE/NDENIE/PSE>.py`: Calculates true values of average total effects/ natural direct and indirect effects/ path-specific effects.
 
 #### Subfolders: `Hyperparameter_1`, `Hyperparameter_2`
 Scripts for hyperparameter analysis.
