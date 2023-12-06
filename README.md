@@ -25,7 +25,7 @@ Scripts for bootstrapping to generate confidence intervals.
 
 - `blau_bootstrap.py`: Produces bootstrapping samples.
 - `init_blau_bootstrap.py`: Initiates `blau_bootstrap.py`.
-- `blau_bootstrap.sbatch`: Slurm script for `init_blau_bootstrap.py` on HPC.
+- `blau_bootstrap.sbatch`: Slurm script for `init_blau_bootstrap.py` on high performance computing cluster (HPC).
 - `standardization.py`: Standardizes all computed results.
 - `sum_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Computes and plots 95% confidence intervals and point estimates on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
 - `plot_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Plots point estimates and 95% confidence interval on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
