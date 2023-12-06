@@ -21,19 +21,19 @@ Contains scripts for results in Section 5.1.
 - `blau_duncan_1967.py`: Processes data, trains models, and estimates point estimates.
 
 #### Subfolder: `bootstrap`
-Scripts for bootstrapping samples.
+Scripts for bootstrapping to generate confidence intervals.
 
 - `blau_bootstrap.py`: Produces bootstrapping samples.
 - `init_blau_bootstrap.py`: Initiates `blau_bootstrap.py`.
 - `blau_bootstrap.sbatch`: Slurm script for `init_blau_bootstrap.py` on HPC.
 - `standardization.py`: Standardizes all computed results.
-- `sum_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Computes and plots 95% confidence intervals and point estimates on average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
-- `plot_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Plots point estimates and 95% confidence interval on average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
+- `sum_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Computes and plots 95% confidence intervals and point estimates on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
+- `plot_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Plots point estimates and 95% confidence interval on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
 
 #### Subfolder: `sensitivity`
-Scripts for sensitive analysis on average total effect of U on Y.
+Scripts for sensitive analysis on the average total effect of U on Y.
 
-- `blau_duncan_1967_sensitivity.py`: Processes data, trains models, and estimates point estimates on average total effects of U on Y with sensitivity analysis
+- `blau_duncan_1967_sensitivity.py`: Processes data, trains models, and estimates point estimates on the average total effects of U on Y with sensitivity analysis
 - `plot_blau_duncan_ATE_UY_sens.py`: Plots point estimates under sensitive analysis.
 
 ---
@@ -46,7 +46,7 @@ Contains scripts for results in Section 5.2.
 - `zhou_2019.py`: Processes data, trains models, and estimates point estimates.
 
 #### Subfolder: `bootstrap`
-Scripts for bootstrapping samples.
+Scripts for bootstrapping to generate confidence intervals.
 
 - `zhou_bootstrap.py`: Produces bootstrapping samples.
 - `init_zhou_bootstrap.py`: Initiates `zhou_bootstrap.py`.
@@ -67,7 +67,7 @@ Scripts for Monte Carlo experiments testing the performance of cGNF.
 - `init_MCE_<1/2/3>.py`: Initiates `MCE_<1/2/3>.py`.
 - `sum_MCE_<1/2/3>.py`: Computes summary statistics.
 - `plot_MCE_<1/2/3>.py`: Plots summary statistics.
-- `est_<ATE/NDENIE/PSE>.py`: Calculates true values of average total effects/ natural direct and indirect effects/ path-specific effects.
+- `est_<ATE/NDENIE/PSE>.py`: Calculates true values of the average total effects/ natural direct and indirect effects/ path-specific effects.
 
 #### Subfolders: `Hyperparameter_1`, `Hyperparameter_2`
 Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings.
