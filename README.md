@@ -31,7 +31,7 @@ Scripts for bootstrapping samples.
 - `plot_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Plots point estimates and 95% confidence interval on average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
 
 #### Subfolder: `sensitivity`
-Scripts for sensitive analysis on .
+Scripts for sensitive analysis on average total effect of U on Y.
 
 - `blau_duncan_1967_sensitivity.py`: Processes data, trains models, and estimates point estimates on average total effects of U on Y with sensitivity analysis
 - `plot_blau_duncan_ATE_UY_sens.py`: Plots point estimates under sensitive analysis.
@@ -61,7 +61,7 @@ Contains scripts for results in Appendix A.
 - `MCE.sbatch`: Slurm script for initiating relevant Python scripts on HPC.
 
 #### Subfolders: `MCE_1`, `MCE_2`, `MCE_3`
-Scripts for producing, initiating, summarizing, and plotting Monte Carlo samples.
+Scripts for Monte Carlo experiments testing the performance of cGNF.
 
 - `MCE_<1/2/3>.py`: Produces Monte Carlo samples.
 - `init_MCE_<1/2/3>.py`: Initiates `MCE_<1/2/3>.py`.
