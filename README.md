@@ -5,18 +5,17 @@ This repository contains the replication files for the paper "Deep Learning with
 ## Directory Structure
 
 1. [Folder: blau_duncan_1967](#folder-blau_duncan_1967)
-         1. [Subfolder: bootstrap](#subfolder-bootstrap)
-         2. [Subfolder: sensitivity](#subfolder-sensitivity)
-      2. [Folder: zhou_2019](#folder-zhou_2019)
-         1. [Subfolder: bootstrap](#subfolder-bootstrap-zhou_2019)
-      3. [Folder: MCEs](#folder-mces)
-         1. [Subfolders: MCE_1, MCE_2, MCE_3](#subfolders-mce_1-mce_2-mce_3)
-         2. [Subfolders: Hyperparameter_1, Hyperparameter_2](#subfolders-hyperparameter_1-hyperparameter_2)
+   1. [Subfolder: bootstrap](#subfolder-bootstrap)
+   2. [Subfolder: sensitivity](#subfolder-sensitivity)
+2. [Folder: zhou_2019](#folder-zhou_2019)
+   1. [Subfolder: bootstrap](#subfolder-zhou_bootstrap_2019)
+3. [Folder: MCEs](#folder-mces)
+   1. [Subfolders: MCE_1, MCE_2, MCE_3](#subfolders-mce_1-mce_2-mce_3)
+   2. [Subfolders: Hyperparameter_1, Hyperparameter_2](#subfolders-hyperparameter_1-hyperparameter_2)
 
 ---
 
 ### Folder: `blau_duncan_1967`
-[Back to Top](#directory-structure)
 Contains scripts for results in Section 5.1.
 
 - `DS1_1962_ssv_txt`: Original data from Blau and Duncan (1967) and our reanalysis. [Download here](https://scholar.harvard.edu/files/xzhou/files/zhou2019_college_replication.zip).
