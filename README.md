@@ -4,14 +4,12 @@ This repository contains the replication files for the paper "Deep Learning with
 
 ## Directory Structure
 
-1. [Folder: blau_duncan_1967](#folder-blau_duncan_1967)
-   - [Subfolder: bootstrap](#subfolder-bootstrap)
-   - [Subfolder: sensitivity](#subfolder-sensitivity)
-2. [Folder: zhou_2019](#folder-zhou_2019)
-   - [Subfolder: bootstrap](#subfolder-bootstrap)
-3. [Folder: MCEs](#folder-mces)
-   - [Subfolders: MCE_1, MCE_2, MCE_3](#subfolders-mce_1-mce_2-mce_3)
-   - [Subfolders: Hyperparameter_1, Hyperparameter_2](#subfolders-hyperparameter_1-hyperparameter_2)
+1. [Folder: blau_duncan_1967: ](#folder-blau_duncan_1967)
+   Contains scripts for results in Section 5.1.
+2. [Folder: zhou_2019: ](#folder-zhou_2019)
+   Contains scripts for results in Section 5.2.
+3. [Folder: MCEs: ](#folder-mces)
+   Contains scripts for results in Appendix A.
 
 ---
 
