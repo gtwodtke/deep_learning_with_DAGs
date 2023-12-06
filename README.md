@@ -46,7 +46,7 @@ Contains scripts for results in Section 5.2.
 - `zhou_2019.py`: Processes data, trains models, and estimates point estimates.
 
 #### Subfolder: `bootstrap`
-Scripts for bootstrapping in `zhou_2019`.
+Scripts for bootstrapping samples.
 
 - `zhou_bootstrap.py`: Produces bootstrapping samples.
 - `init_zhou_bootstrap.py`: Initiates `zhou_bootstrap.py`.
@@ -70,9 +70,9 @@ Scripts for producing, initiating, summarizing, and plotting Monte Carlo samples
 - `est_<ATE/NDENIE/PSE>.py`: Calculates true values of average total effects/ natural direct and indirect effects/ path-specific effects.
 
 #### Subfolders: `Hyperparameter_1`, `Hyperparameter_2`
-Scripts for hyperparameter analysis.
+Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings.
 
-- `Hyperparameters_<1/2>_<a, .., e>.py`: Produces Monte Carlo samples for hyperparameter testing.
+- `Hyperparameters_<1/2>_<a, .., e>.py`: Produces Monte Carlo samples.
 - `init_hyperparameters_<1/2>.py`: Initiates respective hyperparameter scripts.
 - `sum_hyperparameters_<1/2>.py`: Computes summary statistics.
 - `plot_hyperparameters_<1/2>.py`: Plots summary statistics.
