@@ -45,7 +45,7 @@ Scripts for sensitive analysis on .
 ### Folder: `zhou_2019`
 Contains scripts for results in Section 5.2.
 
-- `nlsy79_samples.RData`: Original data for reanalysis. [Download here](https://scholar.harvard.edu/files/xzhou/files/zhou2019_college_replication.zip).
+- `nlsy79_samples.RData`: Original data for Zhou (2019) and our reanalysis. [Download here](https://scholar.harvard.edu/files/xzhou/files/zhou2019_college_replication.zip).
 - `zhou_2019_clean.R`: Cleans and converts data to CSV format.
 - `zhou_2019.py`: Processes data, trains models, and estimates point estimates.
 
