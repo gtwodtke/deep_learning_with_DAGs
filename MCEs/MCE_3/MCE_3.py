@@ -29,24 +29,24 @@ def run_simulation(i, node_id):
             if C_val == 1:
                 return np.random.choice([1, 2, 3], p=[0.5, 0.3, 0.2])
             elif C_val == 2:
-                return np.random.choice([1, 2, 3], p=[0.2, 0.5, 0.3])
+                return np.random.choice([1, 2, 3], p=[0.3, 0.5, 0.2])
             else:  # C_val == 3
-                return np.random.choice([1, 2, 3], p=[0.3, 0.2, 0.5])
+                return np.random.choice([1, 2, 3], p=[0.2, 0.3, 0.5])
         else:  # A_val == 0
-            return np.random.choice([1, 2, 3], p=[0.3, 0.4, 0.3])
+            return np.random.choice([1, 2, 3], p=[0.6, 0.2, 0.2])
 
     # Assign L based on C and A
     L = np.array([assign_L(c, a) for c, a in zip(C, A)])
 
     # Mediator M, binary, with non-linear interaction
     # Logistic transformation to ensure binary outcome
-    logit_M = 0.1 * A + 0.2 * C + 0.25 * A * L
+    logit_M = -0.5 + 0.4 * A + 0.2 * C + 0.3 * L
     prob_M = 1 / (1 + np.exp(-logit_M))  # Sigmoid function for binary conversion
     M = np.random.binomial(1, prob_M, obs)
 
     # Outcome Y, binary, with interaction and non-linear terms
     # Logistic transformation to ensure binary outcome
-    logit_Y = 0.1 * A + 0.1 * C + 0.2 * M + 0.2 * A * M + 0.25 * L
+    logit_Y = -0.5 + 0.3 * A + 0.1 * C + 0.3 * M + 0.3 * A * M + 0.3 * L
     prob_Y = 1 / (1 + np.exp(-logit_Y))  # Sigmoid function for binary conversion
     Y = np.random.binomial(1, prob_Y, obs)
 
