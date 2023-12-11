@@ -43,13 +43,13 @@ results_df = final_results_df
 
 # Define the true values
 true_values = {
-    'cGNF_ATE (A->Y)': 0.052607262,
-    'cGNF_PSE (A->Y)': 0.043036681,
-    'cGNF_PSE (A->L->Y)': -0.000499979,
-    'cGNF_PSE (A->M->Y)': 0.01007056,
-    'cGNF_ATE (A->M)': 0.130511726,
-    'cGNF_NDE': 0.13115862,
-    'cGNF_NIE': -0.000646894
+    'cGNF_ATE (A->Y)': 0.142693609,
+    'cGNF_PSE (A->Y)': 0.109142679,
+    'cGNF_PSE (A->L->Y)': 0.021937634,
+    'cGNF_PSE (A->M->Y)': 0.011613296,
+    'cGNF_ATE (A->M)': 0.112783829,
+    'cGNF_NDE': 0.0923133,
+    'cGNF_NIE': 0.020470529
 }
 
 
