@@ -23,12 +23,12 @@ Contains scripts for results in Section 5.1.
 #### Subfolder: `bootstrap`
 Scripts for bootstrapping to generate confidence intervals.
 
-- `blau_bootstrap.py`: Produces bootstrapping samples.
+- `blau_bootstrap.py`: Generates and processes bootstrap samples, trains models, and estimates point estimates in parallel.
 - `init_blau_bootstrap.py`: Initiates `blau_bootstrap.py`.
-- `blau_bootstrap.sbatch`: Slurm script for `init_blau_bootstrap.py` on high performance computing cluster (HPC).
+- `blau_bootstrap.sbatch`: Slurm script for running `init_blau_bootstrap.py` on high performance computing cluster (HPC).
 - `standardization.py`: Standardizes all computed results.
-- `sum_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Computes and plots 95% confidence intervals and point estimates on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
-- `plot_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Plots point estimates and 95% confidence interval on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
+- `sum_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Computes and plots 90% confidence intervals and point estimates on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
+- `plot_blau_bootstrap_<ATE_XY/ATE_UY/NDENIE>.py`: Plots point estimates and 90% confidence interval on the average total effect of X on Y/ average total effect of U on Y/ natural direct and indirect effects of X on Y mediated by U.
 
 #### Subfolder: `sensitivity`
 Scripts for sensitive analysis on the average total effect of U on Y.
@@ -48,10 +48,10 @@ Contains scripts for results in Section 5.2.
 #### Subfolder: `bootstrap`
 Scripts for bootstrapping to generate confidence intervals.
 
-- `zhou_bootstrap.py`: Produces bootstrapping samples.
+- `zhou_bootstrap.py`: Generates and processes bootstrap samples, trains models, and estimates point estimates in parallel.
 - `init_zhou_bootstrap.py`: Initiates `zhou_bootstrap.py`.
-- `zhou_bootstrap.sbatch`: Slurm script for `init_zhou_bootstrap.py` on HPC.
-- `sum_zhou_bootstrap.py`: Computes 95% confidence interval.
+- `zhou_bootstrap.sbatch`: Slurm script for running `init_zhou_bootstrap.py` on HPC.
+- `sum_zhou_bootstrap.py`: Computes 90% confidence intervals.
 
 ---
 
@@ -63,7 +63,7 @@ Contains scripts for results in Appendix A.
 #### Subfolders: `MCE_1`, `MCE_2`, `MCE_3`
 Scripts for Monte Carlo experiments testing the performance of cGNF.
 
-- `MCE_<1/2/3>.py`: Produces Monte Carlo samples.
+- `MCE_<1/2/3>.py`: Generates and processes Monte Carlo samples, trains models, and estimates point estimates in parallel.
 - `init_MCE_<1/2/3>.py`: Initiates `MCE_<1/2/3>.py`.
 - `sum_MCE_<1/2/3>.py`: Computes summary statistics.
 - `plot_MCE_<1/2/3>.py`: Plots summary statistics.
@@ -76,3 +76,14 @@ Scripts for testing the robustness of cGNF to variations in architecture and hyp
 - `init_hyperparameters_<1/2>.py`: Initiates respective hyperparameter scripts.
 - `sum_hyperparameters_<1/2>.py`: Computes summary statistics.
 - `plot_hyperparameters_<1/2>.py`: Plots summary statistics.
+
+#### Subfolders: `CI_Coverage`
+Scripts for testing the confidence interval coverage rate of cGNF.
+
+- `MCE_bootstrap.py`: Generates and processes bootstrap samples based on Monte Carlo samples, trains models, and estimates point estimates in parallel.
+- `bootstrap_for_MCE.py`: Initiates `MCE_bootstrap.py`.
+- `MCE_for_bootstrap.py`: Generates Monte Carlo samples.
+- `template_sbatch.sh`: Slurm script for running `bootstrap_for_MCE.py` on HPC.
+- `submit_jobs.sh`: Initiates `template_sbatch.sh` on HPC.
+- `sum_MCE_bootstrap.py`: Computes 90% confidence intervals.
+- `plot_MCE_bootstrap.py`: Plots 90% confidence intervals.
