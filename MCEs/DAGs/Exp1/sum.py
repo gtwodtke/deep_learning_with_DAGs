@@ -3,7 +3,7 @@ import pandas as pd
 
 # Define the path where the files are located
 base_path = '/Users/jessezhou/Desktop/Revision'
-folder = 'fig3'
+folder = 'exp1'
 path = os.path.join(base_path, folder, '')
 
 # List of file names to be appended
