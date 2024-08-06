@@ -2,7 +2,7 @@ import os
 import sys
 import pandas as pd
 from joblib import Parallel, delayed
-from MCE_32k import run_simulation  # Ensure this module and function are properly defined and accessible
+from MCE import run_simulation  # Ensure this module and function are properly defined and accessible
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
