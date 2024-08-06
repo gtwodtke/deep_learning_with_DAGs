@@ -28,7 +28,7 @@ def run_simulation(i, node_id):
     epsilon_Y = np.random.normal(0, 1, obs)
 
     # Standard normal Y
-    Y = 0.1 * A + 0.1 * C2 + 0.3 * C1 + 0.2 * A * C1 * C2 + epsilon_Y
+    Y = 0.1 * A + 0.1 * C2 + 0.2 * A * C2 + epsilon_Y
 
     # pack into a dataframe
     df = pd.DataFrame(data={'C1': C1, 'C2': C2, 'A': A, 'Y': Y})
