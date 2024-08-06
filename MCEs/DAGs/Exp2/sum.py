@@ -3,7 +3,7 @@ import pandas as pd
 
 # Define the path where the files are located
 base_path = '/Users/jessezhou/Desktop/Revision'
-folder = 'fig3'
+folder = 'fig2'
 path = os.path.join(base_path, folder, '')
 
 # List of file names to be appended
@@ -37,7 +37,7 @@ results_df = final_results_df
 
 # Define the true values
 true_values = {
-    'cGNF_ATE (A->Y)': 0.1,
+    'cGNF_ATE (A->Y)': 0.3,
 }
 
 
