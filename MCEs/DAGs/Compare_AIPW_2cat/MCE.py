@@ -99,10 +99,13 @@ def run_simulation(i, node_id):
           trn_batch_size=128, val_batch_size=4096, learning_rate=1e-4, seed=None, nb_epoch=50000,
           emb_net=[100, 90, 80, 70, 60], int_net=[60, 50, 40, 30, 20], nb_estop=50, val_freq=1)
 
-    ate_results_df = sim(path=path, dataset_name=dataset_name, model_name=path + '64k_loop', n_mce_samples=100000, treatment='A', cat_list=[0, 1],
+    sim_results_df = sim(path=path, dataset_name=dataset_name, model_name=path + '64k_loop', n_mce_samples=100000, treatment='A', cat_list=[0, 1],
+       moderator=None, mediator=None, outcome='Y', inv_datafile_name='sim_ate_64k')
+
+    boot_results_df = sim(path=path, dataset_name=dataset_name, model_name=path + '64k_loop', n_mce_samples=10000, treatment='A', cat_list=[0, 1],
        confounder=["C1", "C2"], moderator=None, mediator=None, outcome='Y', inv_datafile_name='boot_ate_64k')
 
-    results_df = pd.concat([ate_results_df], ignore_index=True)
+    results_df = pd.concat([sim_results_df, boot_results_df], ignore_index=True)
 
     values_list = results_df['Value'].tolist()
 
