@@ -2,7 +2,7 @@ import os
 import sys
 import pandas as pd
 from joblib import Parallel, delayed
-from MCE_32k import run_simulation  # Ensure this module and function are properly defined and accessible
+from MCE import run_simulation  # Ensure this module and function are properly defined and accessible
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     results_df = pd.DataFrame(results, columns=['E_Y_A_0_sim', 'E_Y_A_1_sim', 'Time_taken'])
 
     base_path = '/project/wodtke/cGNF_python_code'  # Adjust to your actual path
-    folder = '32k'  # Adjust to your actual folder
+    folder = '32k_exp4'  # Adjust to your actual folder
     path = os.path.join(base_path, folder)
 
     # Ensure the directory exists, if not, create it
