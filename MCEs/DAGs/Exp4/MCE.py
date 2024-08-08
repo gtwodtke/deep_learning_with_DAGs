@@ -33,7 +33,7 @@ def run_simulation(i, node_id):
     # pack into a dataframe
     df = pd.DataFrame(data={'C1': C1, 'C2': C2, 'A': A, 'Y': Y})
 
-    base_path = '/project/wodtke/cGNF_python_code/32k'
+    base_path = '/project/wodtke/cGNF_python_code/32k_exp4'
     folder = f'DF_{node_id}_{i}'  # Note the use of i to create a unique folder for each iteration
     path = os.path.join(base_path, folder, '')
     dataset_name = 'DF1_32k_loop'
