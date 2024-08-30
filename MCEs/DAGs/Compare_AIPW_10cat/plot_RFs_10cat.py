@@ -56,14 +56,13 @@ rootmse_values_cgnf = {
     ] for effect in desired_effects
 }
 
-label_effect = [f"ATE$_{{A \\rightarrow Y}}$ from cGNF",
-                f"ATE$_{{A \\rightarrow Y}}$ from cGNF with empirical sampling (${{C_1, C_2}}$)",
-                f"ATE$_{{A \\rightarrow Y}}$ with AIPW-RFs"]
+label_effect = [f"ATE$_{{A \\rightarrow Y}}$ from cGNF"
+                f"ATE$_{{A \\rightarrow Y}}$ from AIPW-RFs"]
 
 # Adjusting the styles to make them unique for each effect
 
 # Define unique styles for the lines
-line_styles_unique = ['-', '-.']
+line_styles_unique = ['-', '--']
 marker_unique = ['o', '^']  # circle, square, triangle_up, triangle_down, triangle_left, triangle_right, pentagon
 colors_unique = ['black', 'grey']
 
