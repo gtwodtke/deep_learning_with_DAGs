@@ -17,7 +17,6 @@ data_64k = pd.read_csv(path + "64k/64k_summary_statistics.csv", index_col=0)
 # Specify the effects of interest
 desired_effects = [
     "cGNF_ATE (A->Y)",
-    "cGNF_ATE (A->Y) with bootstrap",
     "ATEhat"
 ]
 
@@ -64,9 +63,9 @@ label_effect = [f"ATE$_{{A \\rightarrow Y}}$ from cGNF",
 # Adjusting the styles to make them unique for each effect
 
 # Define unique styles for the lines
-line_styles_unique = ['-', '--', '-.']
-marker_unique = ['o', 's', '^']  # circle, square, triangle_up, triangle_down, triangle_left, triangle_right, pentagon
-colors_unique = ['black', 'grey', 'black']
+line_styles_unique = ['-', '-.']
+marker_unique = ['o', '^']  # circle, square, triangle_up, triangle_down, triangle_left, triangle_right, pentagon
+colors_unique = ['black', 'grey']
 
 # Plotting Bias with unique styles
 plt.figure(figsize=(10, 7))
