@@ -56,34 +56,65 @@ Scripts for bootstrapping to generate confidence intervals.
 ---
 
 ### Folder: `MCEs`
-Contains scripts for results in Appendix A.
+Contains scripts for generating results in Appendix A.
 
-- `MCE.sbatch`: Slurm script for initiating relevant Python scripts on HPC.
+- **`MCE.sbatch`**: Slurm script for initiating relevant Python scripts on HPC.
+
+#### Subfolder: `DAGs`
+Contains scripts to test the robustness of cGNF to variations in architecture and hyper-parameter settings, replicating results from Appendix A.2.
+
+Each folder from `Exp1` to `Exp5` contains the replication files for experiments 1 to 5.
+- **`MCE.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel.
+- **`loop.py`**: Initiates the execution of `MCE.py`.
+- **`sum.py`**: Computes summary statistics.
 
 #### Subfolders: `MCE_1`, `MCE_2`, `MCE_3`
-Scripts for Monte Carlo experiments testing the performance of cGNF.
+Scripts for Monte Carlo experiments testing cGNF performance, replicating results from Appendix A.3.
 
-- `MCE_<1/2/3>.py`: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel.
-- `init_MCE_<1/2/3>.py`: Initiates `MCE_<1/2/3>.py`.
-- `sum_MCE_<1/2/3>.py`: Computes summary statistics.
-- `plot_MCE_<1/2/3>.py`: Plots summary statistics.
-- `est_<ATE/NDENIE/PSE>.py`: Calculates true values of the average total effects/ natural direct and indirect effects/ path-specific effects.
+- **`MCE_<1/2/3>.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel.
+- **`init_MCE_<1/2/3>.py`**: Initiates the respective `MCE_<1/2/3>.py` script.
+- **`sum_MCE_<1/2/3>.py`**: Computes summary statistics.
+- **`plot_MCE_<1/2/3>.py`**: Plots summary statistics.
+- **`est_<ATE/NDENIE/PSE>.py`**: Calculates the true values of average total effects, natural direct and indirect effects, and path-specific effects.
+
+#### Subfolder: `CI_Coverage`
+Scripts for testing the confidence interval coverage rate of cGNF, replicating results from Appendix A.4.
+
+- **`MCE_bootstrap.py`**: Generates and processes bootstrap samples based on Monte Carlo samples, trains models, and computes estimates in parallel.
+- **`bootstrap_for_MCE.py`**: Initiates `MCE_bootstrap.py`.
+- **`MCE_for_bootstrap.py`**: Generates Monte Carlo samples.
+- **`template_sbatch.sh`**: Slurm script for running `bootstrap_for_MCE.py` on HPC.
+- **`submit_jobs.sh`**: Initiates `template_sbatch.sh` on HPC.
+- **`sum_MCE_bootstrap.py`**: Computes 90% confidence intervals.
+- **`plot_MCE_bootstrap.py`**: Plots 90% confidence intervals.
 
 #### Subfolders: `Hyperparameter_1`, `Hyperparameter_2`
-Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings.
+Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings, replicating results from Appendix A.5.
 
-- `Hyperparameters_<1/2>_<a, .., e>.py`: Produces Monte Carlo samples.
-- `init_hyperparameters_<1/2>.py`: Initiates respective hyperparameter scripts.
-- `sum_hyperparameters_<1/2>.py`: Computes summary statistics.
-- `plot_hyperparameters_<1/2>.py`: Plots summary statistics.
+- **`Hyperparameters_<1/2>_<a, ..., e>.py`**: Produces Monte Carlo samples.
+- **`init_hyperparameters_<1/2>.py`**: Initiates respective hyperparameter scripts.
+- **`sum_hyperparameters_<1/2>.py`**: Computes summary statistics.
+- **`plot_hyperparameters_<1/2>.py`**: Plots summary statistics.
 
-#### Subfolders: `CI_Coverage`
-Scripts for testing the confidence interval coverage rate of cGNF.
+#### Subfolder: `DML`
+Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings, replicating results from Appendix A.5.
 
-- `MCE_bootstrap.py`: Generates and processes bootstrap samples based on Monte Carlo samples, trains models, and computes estimates in parallel.
-- `bootstrap_for_MCE.py`: Initiates `MCE_bootstrap.py`.
-- `MCE_for_bootstrap.py`: Generates Monte Carlo samples.
-- `template_sbatch.sh`: Slurm script for running `bootstrap_for_MCE.py` on HPC.
-- `submit_jobs.sh`: Initiates `template_sbatch.sh` on HPC.
-- `sum_MCE_bootstrap.py`: Computes 90% confidence intervals.
-- `plot_MCE_bootstrap.py`: Plots 90% confidence intervals.
+The folders `Compare_AIPW_10cat` and `Compare_AIPW_binary` replicate results comparing cGNF and AIPW-RF estimators.
+
+In each folder:
+
+- **`MCE.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel.
+- **`loop.py`**: Initiates the execution of `MCE.py`.
+- **`sum.py`**: Computes summary statistics.
+- **`plot.py`**: Plots summary statistics.
+
+The folder `cGNF_AIPW` contains scripts for estimating cGNF with AIPW:
+
+- **`MCE_point.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel for each MCE dataset.
+- **`loop_point.py`**: Initiates `MCE_point.py`.
+- **`MCE_dml.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel to construct the AIPW-cGNF estimator.
+- **`loop_dml.py`**: Initiates `MCE_dml.py`.
+- **`sum.py`**: Computes the AIPW-cGNF estimator.
+- **`template_sbatch.sh`**: Slurm script for running `MCE_dml.py` on HPC.
+- **`submit_jobs.sh`**: Initiates `template_sbatch.sh` on HPC.
+
