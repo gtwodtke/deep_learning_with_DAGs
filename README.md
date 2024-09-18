@@ -97,7 +97,7 @@ Scripts for testing the robustness of cGNF to variations in architecture and hyp
 - **`plot_hyperparameters_<1/2>.py`**: Plots summary statistics.
 
 #### Subfolder: `DML`
-Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings, replicating results from Appendix A.5.
+Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings, replicating results from Appendix A.6.
 
 The folders `Compare_AIPW_10cat` and `Compare_AIPW_binary` replicate results comparing cGNF and AIPW-RF estimators.
 
