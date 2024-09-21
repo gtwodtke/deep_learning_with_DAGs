@@ -114,7 +114,7 @@ The folder `cGNF_AIPW` contains scripts for estimating cGNF with AIPW:
 - **`loop_point.py`**: Initiates `MCE_point.py`.
 - **`MCE_dml.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel to construct the AIPW-cGNF estimator.
 - **`loop_dml.py`**: Initiates `MCE_dml.py`.
-- **`sim_parallel_dml.py`**: A beta version of the simulation function that estimates components in the AIPW-cGNF estimator.
+- **`sim_parallel_dml.py`**: A beta version of the simulation function that estimates nuisance functions in the AIPW-cGNF estimator.
 - **`sum.py`**: Computes the AIPW-cGNF estimator.
 - **`template_sbatch.sh`**: Slurm script for running `MCE_dml.py` on HPC.
 - **`submit_jobs.sh`**: Initiates `template_sbatch.sh` on HPC.
