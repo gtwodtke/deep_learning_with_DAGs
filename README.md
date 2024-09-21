@@ -61,7 +61,7 @@ Contains scripts for generating results in Appendix A.
 - **`MCE.sbatch`**: Slurm script for initiating relevant Python scripts on HPC.
 
 #### Subfolder: `DAGs`
-Contains scripts to test the robustness of cGNF to variations in architecture and hyper-parameter settings, replicating results from Appendix A.2.
+Contains scripts to test robustness of cGNF estimates to errors in the assumed DAG, replicating results from Appendix A.2.
 
 Each folder from `Exp1` to `Exp5` contains the replication files for experiments 1 to 5.
 - **`MCE.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel.
@@ -97,7 +97,7 @@ Scripts for testing the robustness of cGNF to variations in architecture and hyp
 - **`plot_hyperparameters_<1/2>.py`**: Plots summary statistics.
 
 #### Subfolder: `DML`
-Scripts for testing the robustness of cGNF to variations in architecture and hyper-parameter settings, replicating results from Appendix A.6.
+Scripts comparing the performance of cGNFs to debiased machine learning (DML) methods — specifically, a augmented inverse probability weighting estimator with nuisance functions estimated via random forests (AIPW-RF). These scripts replicate results from Appendix A.6.
 
 The folders `Compare_AIPW_10cat` and `Compare_AIPW_binary` replicate results comparing cGNF and AIPW-RF estimators.
 
@@ -114,7 +114,7 @@ The folder `cGNF_AIPW` contains scripts for estimating cGNF with AIPW:
 - **`loop_point.py`**: Initiates `MCE_point.py`.
 - **`MCE_dml.py`**: Generates and processes Monte Carlo samples, trains models, and computes estimates in parallel to construct the AIPW-cGNF estimator.
 - **`loop_dml.py`**: Initiates `MCE_dml.py`.
-- **`sim_parallel_dml.py`**: A beta version of the simulation function that estimates components in the augmented inverse probability weighting (AIPW) estimator.
+- **`sim_parallel_dml.py`**: A beta version of the simulation function that estimates components in the AIPW-cGNF estimator.
 - **`sum.py`**: Computes the AIPW-cGNF estimator.
 - **`template_sbatch.sh`**: Slurm script for running `MCE_dml.py` on HPC.
 - **`submit_jobs.sh`**: Initiates `template_sbatch.sh` on HPC.
