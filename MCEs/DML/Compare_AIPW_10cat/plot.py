@@ -57,7 +57,7 @@ rootmse_values_cgnf = {
 }
 
 label_effect = [f"ATE$_{{A \\rightarrow Y}}$ from cGNF"
-                f"ATE$_{{A \\rightarrow Y}}$ from AIPW-RFs"]
+                f"ATE$_{{A \\rightarrow Y}}$ from AIPW-RF"]
 
 # Adjusting the styles to make them unique for each effect
 
