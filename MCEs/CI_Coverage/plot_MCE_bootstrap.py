@@ -17,9 +17,9 @@ ground_truth = 0.2
 plt.figure(figsize=(12, 6))
 
 # Create custom legend entries
-custom_lines = [plt.Line2D([0], [0], color='black', marker='o', linestyle='None', markersize=3, label='Ground Truth (ATE = 0.2)'),
-                plt.Line2D([0], [0], color='grey', lw=2, linestyle='-', label='CI Covering Ground Truth'),
-                plt.Line2D([0], [0], color='grey', lw=2, linestyle='--', label='CI Not Covering Ground Truth')]
+custom_lines = [plt.Line2D([0], [0], color='black', marker='o', linestyle='None', markersize=3, label='Truth (ATE = 0.2)'),
+                plt.Line2D([0], [0], color='grey', lw=2, linestyle='-', label='CI Covering Truth'),
+                plt.Line2D([0], [0], color='grey', lw=2, linestyle='--', label='CI Not Covering Truth')]
 
 # Plot each CI and a smaller dot for the ground truth
 for i in range(len(mc_samples)):
