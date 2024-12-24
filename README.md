@@ -16,7 +16,7 @@ This repository contains the replication files for the paper "Deep Learning with
 ### Folder: `blau_duncan_1967`
 Contains scripts for results in Section 5.1.
 
-- `DS1_1962_ssv_txt`: Original data from Blau and Duncan (1967) and our reanalysis. [Download here](https://scholar.harvard.edu/files/xzhou/files/zhou2019_college_replication.zip).
+- `DS1_1962_ssv_txt`: Original data from Blau and Duncan (1967) and our reanalysis. [Download here](https://www.icpsr.umich.edu/web/ICPSR/studies/6162/datadocumentation#).
 - `blau_duncan_1967_clean.py`: Cleans and converts data to CSV format.
 - `blau_duncan_1967.py`: Processes data, trains models, and estimates point estimates.
 
