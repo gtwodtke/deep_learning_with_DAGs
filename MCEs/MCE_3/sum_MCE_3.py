@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Define the path where the files are located
-base_path = '/Users/jessezhou/Desktop/Midway_MCE_results/_MCE_2'
+base_path = '/Users/jessezhou/Desktop/Midway_MCE_results/NON_LINEAR'
 folder = '2k'
 path = os.path.join(base_path, folder, '')
 
