@@ -6,23 +6,23 @@ base_path = '/Users/jessezhou/Desktop/Revision/cGNF_DML'
 folder = '1k'
 path = os.path.join(base_path, folder, '')
 
-# # List of file names to be appended
-# file_names = [f'1k_final_results_{i}.csv' for i in range(1, 6)]
+# List of file names to be appended
+file_names = [f'1k_final_results_{i}.csv' for i in range(1, 6)]
 
-# # Initialize an empty DataFrame to store the combined results
-# final_results_df = pd.DataFrame()
-#
-# # Iterate through the file names and read each CSV file
-# for file_name in file_names:
-#     file_path = os.path.join(path, file_name)
-#     temp_df = pd.read_csv(file_path)
-#     final_results_df = pd.concat([final_results_df, temp_df], ignore_index=True)
+# Initialize an empty DataFrame to store the combined results
+final_results_df = pd.DataFrame()
+
+# Iterate through the file names and read each CSV file
+for file_name in file_names:
+    file_path = os.path.join(path, file_name)
+    temp_df = pd.read_csv(file_path)
+    final_results_df = pd.concat([final_results_df, temp_df], ignore_index=True)
 
 # Save the combined results to a new CSV file
 final_results_file_path = os.path.join(path, '1k_final_results.csv')
-# final_results_df.to_csv(final_results_file_path, index=False)
+final_results_df.to_csv(final_results_file_path, index=False)
 
-final_results_df = pd.read_csv(final_results_file_path)
+# final_results_df = pd.read_csv(final_results_file_path)
 
 
 #cGNF
