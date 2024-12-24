@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Define the path where the files are located
-base_path = '/Users/jessezhou/Desktop/BIN'
+base_path = '/Users/jessezhou/Desktop/DISCRETE'
 folder = '128k'
 path = os.path.join(base_path, folder, '')
 
